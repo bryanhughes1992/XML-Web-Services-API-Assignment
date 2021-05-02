@@ -17,16 +17,22 @@ window.addEventListener("load", function() {
     //Capture the <p> element to store the modified Yoda translated IMDb plot
     var modifiedContainer = document.getElementById("modifiedContainer");
 
+    //Capture the responded IMDb movie title
     var movieTitle = `<h1 class="movie-title">${responseData.fullTitle}</h1>`;
+    //Capture the responded IMDb movie plot
     var moviePlot = `${responseData.plot}`;
-    var moviePoster = `<img alt="movie poster" src="${responseData.image}" class="movie-poster">`
+    //Capture the IMDb movie poster
+    var moviePoster = `<img alt="movie poster" src="${responseData.image}" class="movie-poster">`;
 
 
     titleContainer.innerHTML = movieTitle;
     originalContainer.innerHTML = moviePlot;
     posterContainer.innerHTML = moviePoster;
 
-    var newRequest = fetch(`https://api.funtranslations.com/translate/yoda.json?text=${moviePlot}`).then(Response => Response.json()).then(yodaData => {
+    //Send the movie plot as a string interpolated into the Yoda API
+    var newRequest = fetch(`https://api.funtranslations.com/translate/yoda.json?text=${moviePlot}`)
+    .then(Response => Response.json())
+    .then(yodaData => {
       var yodaPlot = yodaData;
       modifiedContainer.innerHTML = yodaPlot.contents.translated;
     });

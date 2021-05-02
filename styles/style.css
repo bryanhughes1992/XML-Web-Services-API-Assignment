@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Rock+Salt&display=swap');
+
+main {
+  width: 70vw;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+#titleContainer {
+  font-family: 'Rock Salt', cursive;
+  text-align: center;
+}
+
+#originalContainer {
+  font-family: "Rock Salt", cursive;
+}
+
+h2 {
+  font-family: 'Rock Salt', cursive;
+  text-align: center;
+}
+
+#modifiedContainer {
+  font-family: 'Rock Salt', cursive;
+  text-align: center;
+}
+
+#posterContainer {
+  display: grid;
+  place-content: center;
+  padding-top: 2em;
+}
